@@ -1,0 +1,62 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mysecurapp</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}"/>
+		<script src="{% static 'jquery-1.10.2.js' %}"></script>
+    <script type="text/javascript" >
+    $(document).ready(function(){
+        $("#id_username").attr('placeholder', 'Usuario');
+        $("#id_password").attr('placeholder', 'Contraseña');
+    });
+</script>
+	</head>
+	<body>
+			<div id="header">
+				<div class="top">
+						<nav id="nav">
+							<ul>
+								
+                <li><a href="{% url 'cuenta:login' %}" id="top-link" class="skel-layers-ignoreHref">HOME</span></a></li>
+                <li><a href="{% url 'cuenta:register' %}" id="about-link" class="skel-layers-ignoreHref">REGISTRER</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+			</div>
+			<div id="main">
+					<section id="top" class="one dark cover">
+						<div class="container">
+							<header>
+								<h2 class="alt">WELCOME TO <hr></hr> MYSECURAPP</h2>
+								<p>Inicia secion para moritoriar tus securys.</p>
+							</header>
+							<footer>
+								<div class="box">
+									<form method="POST">
+    	{% csrf_token %}
+		{{ form.username.errors}}
+    	{{ form.username}}
+	<br>
+		{{ form.password.errors}}
+    	{{ form.password}}
+	<br>
+    	<input type="submit" value="Register" id="id1">
+</form>
+							
+								
+							</footer>
+						</div>
+					</section>
+			</div>
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollzer.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+	</body>
+</html>

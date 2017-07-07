@@ -1,0 +1,99 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Registrer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<script src="{% static 'jquery-1.10.2.js' %}"></script>
+		<script type="text/javascript" >
+    $(document).ready(function(){
+        $("#id_username").attr('placeholder', 'Usuario');
+        $("#id_username").prop({maxlength: 30});
+        $("#id_password1").attr('placeholder', 'Contraseña');
+        $("#id_password1").prop({maxlength: 30});
+        $("#id_password2").attr('placeholder', 'Repita Contraseña');
+        $("#id_password2").prop({maxlength: 30});
+        $("#id_first_name").attr('placeholder', 'Nombres');
+        $("#id_first_name").prop({maxlength: 30});
+        $("#id_last_name").attr('placeholder', 'Apellidos');
+        $("#id_last_name").prop({maxlength: 30});
+        $("#id_telephone").attr('placeholder', 'Telefono');
+        $("#id_telephone").prop({maxlength: 10});
+        $("#id_email").attr('placeholder', 'e-mail');
+        $("#id_email").prop({maxlength: 30});
+        $("#id_date").attr('type', 'date');
+    });
+</script>
+		<style type="text/css">
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+		</style>
+	</head>
+	<body>
+			<div id="header">
+				<div class="top">
+						<nav id="nav">
+							<ul>
+                <li><a href="{% url 'cuenta:login' %}" id="top-link" class="skel-layers-ignoreHref">HOME</span></a></li>
+                <li><a href="{% url 'cuenta:register' %}" id="about-link" class="skel-layers-ignoreHref">REGISTRER</span></a></li>
+							</ul>
+						</nav>
+				</div>
+			</div>
+			<div id="main">
+					<section id="top" class="one dark cover">
+						<div class="container">
+							<header>
+								<h2 class="alt">REGISTRER</h2><hr></hr>
+                <p>Registrate para vinvular tus securys.</p>
+							</header>
+							<footer>
+								<div class="box">
+							
+				<form method="POST" enctype="multipart/form-data">
+    	{% csrf_token %}
+		{{ form.username.errors}}
+    	{{ form.username}}
+	<br>
+		{{ form.password1.errors}}
+    	{{ form.password1}}
+	<br>
+		{{ form.password2.errors}}
+    	{{ form.password2}}
+	<br>
+		{{ form.first_name.errors}}
+    	{{ form.first_name}}
+	<br>
+		{{ form.last_name.errors}}
+    	{{ form.last_name}}
+	<br>
+		{{ form.email.errors}}
+    	{{ form.email}}
+    <br>
+		{{ form.telephone.errors}}
+    	{{ form.telephone}}
+    
+		{{ form.date.errors}}
+    	{{ form.date}}
+    <br><br>
+    
+    	<input type="submit" value="Registrarse" id="id1">
+							</footer>
+						</div>
+					</section>
+			</div>
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollzer.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+</html>

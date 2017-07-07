@@ -1,0 +1,110 @@
+{% load static from staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Welcome</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body>
+
+			<div id="header">
+
+				<div class="top">
+
+						<div id="logo">
+							<span class="image avatar48"><img src="{% static 'images/avatar.jpg' %}" alt="" /></span>
+							<h1 id="title">{{ user.username }}</h1>
+						</div>
+
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Mi casa</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Registros</span></a></li>
+								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Usuario</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Alertas</span></a></li>
+								<li><a href="{% url 'cuenta:logout' %}" id="contact-link" class="skel-layers-ignoreHref"><span>Salir</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+
+
+			</div>
+
+
+			<div id="main">
+
+
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">MYSECURAPP</h2>
+								<p>Con tu hogar automatizado por fin podrás vigilar<br />
+								tu casa desde cualquier lugar.</p>
+							</header>
+
+						</div>
+					</section>
+
+
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Registros</h2>
+									<center>
+								{% for alarma in object_list %}
+								<div class="">
+								<img src="{% static 'images/vacios.jpg' %}" alt="" style="
+    width: 400px;
+    height: 300px;"/></div><br>
+								{{ alarma.hora}}
+								<hr>
+								{% endfor %}
+									</center>
+							</header>
+
+
+
+						</div>
+					</section>
+
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Configuracion</h2>
+							</header>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Alertas</h2>
+							</header>
+
+
+
+						</div>
+					</section>
+
+			</div>
+
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollzer.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+	</body>
+</html>

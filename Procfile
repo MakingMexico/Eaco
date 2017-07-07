@@ -1,0 +1,1 @@
+web: gunicorn securapp.wsgi --log-file=-

@@ -1,0 +1,30 @@
+#img{
+    height: 200px;
+    width: 300px;
+}
+
+#desc{
+    padding-top: 1rem;
+}
+
+#logo{
+    height: 70px;
+    width: 70px;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 5px 8px 8px 0 rgba(0,0,0,.55);
+    transition: 0.3s;
+    height: 300px;
+    width: 300px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
