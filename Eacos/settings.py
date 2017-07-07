@@ -22,6 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2v+u!j4-@*w$%vd#-5+mbrr3_(41w0%t7e-1b)t(f^#e1ui2zi'
 
+# SECURITY WARNING: keep the secret key used in production secret!
+TWILIO_ACCOUNT_SID = 'ACc1cf9bd236975f166241d1940f541bf4'
+
+# SECURITY WARNING: keep the secret key used in production secret!
+TWILIO_AUTH_TOKEN = '450e357cf0f66f7fca3465f11d8854d2'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,6 +43,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Additional apps
+    'phonenumber_field',
+    'django_twilio',
+    # Our apps
+    'browser_calls',
+    'eaco_bot',
+    'sensors',
+    'users',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,3 +114,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
+STATIC_ROOT = 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, "media")
+)
