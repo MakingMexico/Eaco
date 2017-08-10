@@ -1,0 +1,30 @@
+.txtcenter {
+
+  padding-top: 9px;
+}
+
+.txtcenter2 {
+  text-align: center;
+}
+
+.main-cont{
+    margin: 20px;
+    text-align: center;
+}
+
+.head-color{
+    background-color: #fff;
+    //background-color: #061E38;
+}
+
+.mybox{
+  float: right;
+	margin: 0px 0 40px 15px;
+}
+
+.account-logo{
+  width: 25%;
+  margin-left: 23px;
+  float: left;
+	margin-right: 10px;
+}
