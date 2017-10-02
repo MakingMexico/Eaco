@@ -392,6 +392,7 @@ span.middot {
 .nobg { background: none !important; }
 
 .nobgcolor { background-color: transparent !important; }
+.t100 { font-weight: 100 !important; }
 
 .t300 { font-weight: 300 !important; }
 
